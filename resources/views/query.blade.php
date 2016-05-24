@@ -36,16 +36,7 @@
     <body>
         <div class="container">
             <div class="content">
-                <div class="title">Database generator</div><Br>
-                <form action="query" method="post">
-                    <label>Kolom:</label>
-                    <input type="text" name="kolom"><br>
-                    <label>Amount:</label>
-                    <input type="number" name="amount" min="1" value="1"><br>
-                    <label>Preset:</label>
-                    <input type="text" name="preset" disabled value="-"><br>
-                    <input type="submit" value="submit">
-                </form>
+
             </div>
         </div>
     </body>

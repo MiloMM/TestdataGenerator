@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/query', function () {
+Route::post('/query', function () {
     return view('query');
 });

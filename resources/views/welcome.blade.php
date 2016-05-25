@@ -38,12 +38,19 @@
             <div class="content">
                 <div class="title">Database generator</div><Br>
                 <form action="query" method="post">
-                    <label>Kolom:</label>
-                    <input type="text" name="kolom"><br>
+                    <label>Table:</label>
+                    <input type="text" name="table" required><br>
+                    <label>Column:</label>
+                    <input type="text" name="column" required><br>
                     <label>Amount:</label>
-                    <input type="number" name="amount" min="1" value="1"><br>
+                    <input type="number" name="amount" min="1" value="1" required><br>
                     <label>Preset:</label>
-                    <input type="text" name="preset" disabled value="-"><br>
+                    <select name="preset">
+                        <!--<option value="none">No preset</option>-->
+                        <option value="FirstName">First name</option>
+                        <option value="LastName">Last name</option>
+                    </select><br>
+                    <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                     <input type="submit" value="submit">
                 </form>
             </div>

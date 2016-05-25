@@ -1,3 +1,17 @@
+<?php
+    $table = $_POST['table'];
+    $column = $_POST['column'];
+    $amount = $_POST['amount'];
+    $preset = $_POST['preset'];
+
+    $query = "INSERT INTO $table ($column) VALUES";
+
+    for ($x = 0; $x <= $amount; $x++) {
+        $value = DB::raw('RAND()')->take(1);
+
+        $query += "($result),";
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -36,7 +50,8 @@
     <body>
         <div class="container">
             <div class="content">
-
+                <div class="title">Database generator</div>
+                <p><?php echo $query ?></p>
             </div>
         </div>
     </body>

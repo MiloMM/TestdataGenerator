@@ -8,7 +8,7 @@
 
     for ($x = 0; $x <= $amount; $x++) {
         $tabel = DB::table('tabel')->take(1)->get();
-        $result = $tabel->value;
+        $result = $tabel[0]->value;
         $query += "($result),";
     }
 ?>

@@ -4,12 +4,12 @@
     $amount = $_POST['amount'];
     $preset = $_POST['preset'];
 
-    $query = "INSERT INTO $table ($column) VALUES";
+    $query = "INSERT INTO `$table` (`$column`) VALUES";
 
-    for ($x = 0; $x <= $amount; $x++) {
-        $tabel = DB::table('tabel')->take(1)->get();
-        $result = $tabel->value;
-        $query += "($result),";
+    for ($x = 1; $x <= $amount; $x++) {
+        $tabel = DB::table('tabel')->where('preset', '=', $preset)->orderBy(DB::raw('RAND()'))->take(1)->get();
+        $result = $tabel[0]->value;
+        $query =  $query . " ('$result'),";
     }
 ?>
 <!DOCTYPE html>

@@ -7,8 +7,8 @@
     $query = "INSERT INTO $table ($column) VALUES";
 
     for ($x = 0; $x <= $amount; $x++) {
-        $value = DB::raw('RAND()')->take(1);
-
+        $tabel = DB::table('tabel')->take(1)->get();
+        $result = $tabel->value;
         $query += "($result),";
     }
 ?>

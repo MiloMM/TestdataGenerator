@@ -43,12 +43,13 @@
                     <label>Column:</label>
                     <input type="text" name="column" required><br>
                     <label>Amount:</label>
-                    <input type="number" name="amount" min="1" value="1" required><br>
+                    <input type="number" name="amount" min="1" value="10" required><br>
                     <label>Preset:</label>
                     <select name="preset">
                         <!--<option value="none">No preset</option>-->
                         <option value="FirstName">First name</option>
                         <option value="LastName">Last name</option>
+                        <option value="EMail">E-mail</option>
                     </select><br>
                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                     <input type="submit" value="submit">

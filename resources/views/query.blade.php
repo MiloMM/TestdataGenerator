@@ -14,6 +14,8 @@
 
     $query = rtrim($query, ",");
     $query .= ";";
+
+    //rand(1111, 9999);
 ?>
 <!DOCTYPE html>
 <html>

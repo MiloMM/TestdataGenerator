@@ -7,10 +7,13 @@
     $query = "INSERT INTO `$table` (`$column`) VALUES";
 
     for ($x = 1; $x <= $amount; $x++) {
-        $tabel = DB::table('tabel')->where('preset', '=', $preset)->orderBy(DB::raw('RAND()'))->take(1)->get();
+        $tabel = DB::table('presets')->where('preset', '=', $preset)->orderBy(DB::raw('RAND()'))->take(1)->get();
         $result = $tabel[0]->value;
-        $query =  $query . " ('$result'),";
+        $query .= " ('$result'),";
     }
+
+    $query = rtrim($query, ",");
+    $query .= ";";
 ?>
 <!DOCTYPE html>
 <html>
